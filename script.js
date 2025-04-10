@@ -1,36 +1,69 @@
-var btn=document.getElementById("sbtbtn");
-btn.addEventListener("click",function(){
-    let score=0;
-    const q1=document.getElementsByName("n1");
-    q1.forEach(ans =>{
-        if(ans.checked && ans.value==="var x=5;")
-        {
-            score++;
-        }
-    });
-    const q2=document.getElementsByName("q2");
-    const q2ans=['for loop','while loop'];
-    let correctCount = 0;
+let shoppinglist=[];
 
-for (let i=0;i<q2.length;i++) {
-    if (q2[i].checked) {
-        if (q2ans.includes(q2[i].value)) {
-            correctCount++;
-        }
-        else{ 
-            correctCount=-1; 
-            break;
-        }
+var text1=document.getElementById("textbox1");
+var text2=document.getElementById("textbox2");
+var category=document.getElementById("category");
+var h4=document.getElementById("list");
+var cat1=document.getElementById("c1");
+var cat2=document.getElementById("c2");
+var cat3=document.getElementById("c3");
+
+
+var btn1=document.getElementById("add-button");
+var btn2=document.getElementById("remove-button");
+var btn3=document.getElementById("sort-button");
+
+function add()
+{
+    let v1=text1.value;
+    let v2=text2.value;
+    let car=category.value;
+    shoppinglist.push(`${v1}-${v2}`);
+    h4.textContent=`Shopping list: ${shoppinglist}`;
+    if(category.value=='Diary')
+    {
+        var listItem=document.createElement("li");
+        listItem.textContent=`${text1.value}`;
+        cat1.append(listItem);
+    }
+    if(category.value=='Bakery')
+    {
+        var listItem=document.createElement("li");
+        listItem.textContent=`${text1.value}`;
+        cat2.append(listItem);
+    }
+    if(category.value=='Others')
+    {
+        var listItem=document.createElement("li");
+        listItem.textContent=`${text1.value}`;
+        cat3.append(listItem);
     }
 }
-if (correctCount === q2ans.length) 
+function remove()
+{
+    if(shoppinglist.length===0)
     {
-    score++;
+        alert("Shopping list is already empty");
+        return;
     }
-    const q3=document.getElementById("textbox").value.trim().toLowerCase();
-    if(q3=="helloworld")
+    const lastItem=shoppinglist.pop();
+    h4.textContent=`Shopping list: ${shoppinglist}`;
+    const [itemname] = lastItem.split("-");
+    if(cat1.querySelector(`li:last-child`)?.textContent===itemname)
     {
-        score++;
+        cat1.removeChild(cat1.lastChild);
     }
-    document.getElementById("result").textContent = `Your score is: ${score}`;
-});
+    if(cat2.querySelector(`li:last-child`)?.textContent===itemname)
+    {
+        cat2.removeChild(cat2.lastChild);
+    }
+    if(cat3.querySelector(`li:last-child`)?.textContent===itemname)
+    {
+        cat3.removeChild(cat3.lastChild);
+    }
+}
+function sortItem()
+{
+    shoppinglist.sort();
+    h4.textContent=`Shopping list: ${shoppinglist}`;
+}

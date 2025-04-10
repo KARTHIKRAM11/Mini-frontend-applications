@@ -2,40 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2023503705Quiz</title>
+    <title>2023503705</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Interactive Quiz Game</h1>
+    <h1>SHOPPING LIST MANAGER</h1>
     <div id="container">
-        <div class="quiz1">
-            <p>1.What is the correct way to declare a variable in javascript?</p>
-            <input type="radio" id="button1" name="n1" value="var x=5;">
-            <label for="button1">var x=5;</label><br>
-            <input type="radio" id="button2" name="n1" value="variable x=5;">
-            <label for="button2">variable x=5;</label><br>
-            <input type="radio" id="button3" name="n1" value="v x=5;">
-            <label for="button3">v x=5;</label><br>
-        </div>
-        <div class="quiz2">
-            <p>2.Which of these are valid loop types in javascript?</p>
-            <input type="checkbox" id="check1" name="q2" value="for loop">
-            <label for="check1">for loop</label><br>
-            <input type="checkbox" id="check2" name="q2" value="while loop">
-            <label for="check2">while loop</label><br>
-            <input type="checkbox" id="check3" name="q2" value="loop">
-            <label for="check3">loop</label><br>
-            <input type="checkbox" id="check4" name="q2" value="repeat loop">
-            <label for="check4">repeat loop</label><br>
-        </div>
-        <div class="quiz3">
-            <p>3.What will be the output of console.log("Hello"+""+"World")</p>
-            <input type="text" id="textbox" placeholder="Type your answer">
-        </div>
-        <button id="sbtbtn">Submit</button>
-        <h4 id="result"></h4>
+        <input type="text" id="textbox1" placeholder="Enter item name">
+        <input type="number" id="textbox2" placeholder="Enter quantity">
+        <select id="category">
+            <option value="Diary">Diary</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Others">Others</option>
+        </select>
+        <button id="add-button" onclick="add()">Add Item</button>
+        <button id="remove-button" onclick="remove()">Remove Item</button>
+        <button id="sort-button" onclick="sortItem()">Sort Items</button>
+        <h4 id="list"></h4><br>
+        <h3 id="category-list">Items by category:</h3>
+        <p id="c1">Diary:</p>
+        <p id="c2">Bakery:</p>
+        <p id="c3">Others:</p>
     </div>
+
+
     <script src="script.js"></script>
 </body>
 </html>

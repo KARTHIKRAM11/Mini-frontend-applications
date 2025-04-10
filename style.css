@@ -1,35 +1,46 @@
 body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: wheat;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    margin: 0;
 }
 h1{
-    font-size: 35px;
     text-align: center;
+    font-weight: bold;
 }
 #container{
-    border: none;
-    background-color: rgb(240, 223, 223);
-    padding: 20px;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 4%;
-    border-radius: 10px;
-    box-shadow: 5px 5px gray;
+    border: solid black;
+    width: 60em;
+    max-width: 75em;
+    height: 25em;
+    padding: 15px;
+    margin-left: 20%;
+    background-color: violet;
 }
-#sbtbtn{
-    font-size: 20px;
-    background-color: green;
-    margin-top: 5%;
+input{
+    font-size: 15px;
+    border: 2px solid black;
+    padding: 5px;
+    margin: 8px;
+}
+select{
+    font-size: 15px;
+    border: 2px solid black;
+    padding: 4px;
+}
+button{
+    font-size: 17px;
+    padding: 7px;
+    margin: 10px;
+    font-weight: bold;
     border: none;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    width: 10%;
+    border-radius: 5px;
     cursor: pointer;
 }
-#sbtbtn:hover{
-    background-color: rgb(14, 70, 14);
+#add-button{
+    background-color: rgb(44, 238, 44);
 }
-#textbox{
-    font-size: 15px;
+#remove-button{
+    background-color: red;
+}
+#sort-button{
+    background-color: rgb(26, 182, 243);
 }
