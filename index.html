@@ -3,38 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2023503705Quiz</title>
+    <title>2023503705</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Interactive Quiz Game</h1>
-    <div id="container">
-        <div class="quiz1">
-            <p>1.What is the correct way to declare a variable in javascript?</p>
-            <input type="radio" id="button1" name="n1" value="var x=5;">
-            <label for="button1">var x=5;</label><br>
-            <input type="radio" id="button2" name="n1" value="variable x=5;">
-            <label for="button2">variable x=5;</label><br>
-            <input type="radio" id="button3" name="n1" value="v x=5;">
-            <label for="button3">v x=5;</label><br>
-        </div>
-        <div class="quiz2">
-            <p>2.Which of these are valid loop types in javascript?</p>
-            <input type="checkbox" id="check1" name="q2" value="for loop">
-            <label for="check1">for loop</label><br>
-            <input type="checkbox" id="check2" name="q2" value="while loop">
-            <label for="check2">while loop</label><br>
-            <input type="checkbox" id="check3" name="q2" value="loop">
-            <label for="check3">loop</label><br>
-            <input type="checkbox" id="check4" name="q2" value="repeat loop">
-            <label for="check4">repeat loop</label><br>
-        </div>
-        <div class="quiz3">
-            <p>3.What will be the output of console.log("Hello"+""+"World")</p>
-            <input type="text" id="textbox" placeholder="Type your answer">
-        </div>
-        <button id="sbtbtn">Submit</button>
-        <h4 id="result"></h4>
+    <h1>ROCK PAPER SCISSOR GAME</h1>
+    <div class="container">
+        <h3>Choose one option</h3>
+        <h3 id="score">Your Score: 0</h3>
+        <button id="btn1">ROCK 👊</button>
+        <button id="btn2">PAPER 🖐️</button>
+        <button id="btn3">SCISSOR ✌️</button>
+        <p>Your choice: </p>
+        <p>Computer choice: </p>
+        <h3 id="result"></h3>
+        <button id="btn4">RESET GAME</button>
     </div>
     <script src="script.js"></script>
 </body>

@@ -1,36 +1,42 @@
-var btn=document.getElementById("sbtbtn");
-btn.addEventListener("click",function(){
-    let score=0;
-    const q1=document.getElementsByName("n1");
-    q1.forEach(ans =>{
-        if(ans.checked && ans.value==="var x=5;")
-        {
-            score++;
-        }
-    });
-    const q2=document.getElementsByName("q2");
-    const q2ans=['for loop','while loop'];
-    let correctCount = 0;
+const rock=document.getElementById("btn1");
+const paper=document.getElementById("btn2");
+const scissor=document.getElementById("btn3");
+const reset=document.getElementById("btn4");
+const res=document.getElementById("result");
+let score=0;
 
-for (let i=0;i<q2.length;i++) {
-    if (q2[i].checked) {
-        if (q2ans.includes(q2[i].value)) {
-            correctCount++;
-        }
-        else{ 
-            correctCount=-1; 
-            break;
-        }
-    }
-}
-if (correctCount === q2ans.length) 
+rock.addEventListener("click",()=> play("rock"));
+paper.addEventListener("click",()=> play("paper"));
+scissor.addEventListener("click",()=> play("scissor"));
+reset.addEventListener("click",resetgame);
+
+function play(playerchoice)
+{
+    const choices=['rock','paper','scissor'];
+    const pc=choices[Math.floor(Math.random()*choices.length)];
+    document.querySelector("p:nth-of-type(1)").textContent = `Your choice: ${playerchoice}`;
+    document.querySelector("p:nth-of-type(2)").textContent = `Computer choice: ${pc}`;
+    if(playerchoice===pc)
     {
-    score++;
+        res.textContent='Its a tie';
     }
-    const q3=document.getElementById("textbox").value.trim().toLowerCase();
-    if(q3=="helloworld")
+    else if((playerchoice==='rock' && pc==='scissor') ||
+    (playerchoice==='paper' && pc==='rock') ||
+    (playerchoice==='scissors' && pc==='paper'))
     {
         score++;
+        res.textContent='You won';
     }
-    document.getElementById("result").textContent = `Your score is: ${score}`;
-});
+    else
+    {
+        res.textContent='Computer won';
+    }
+    document.querySelector("h3:nth-of-type(2)").textContent = `Your Score: ${score}`;
+}
+function resetgame() {
+    score = 0;
+    document.querySelector("h3:nth-of-type(2)").textContent = "Your Score: 0";
+    document.querySelector("p:nth-of-type(1)").textContent = "Your choice: ";
+    document.querySelector("p:nth-of-type(2)").textContent = "Computer choice: ";
+    res.textContent = "Choose your weapon";
+}

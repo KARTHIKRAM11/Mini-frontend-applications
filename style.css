@@ -1,35 +1,41 @@
 body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: wheat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:lightpink;
 }
 h1{
-    font-size: 35px;
     text-align: center;
+    font-size: 35px;
 }
-#container{
-    border: none;
-    background-color: rgb(240, 223, 223);
-    padding: 20px;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 4%;
-    border-radius: 10px;
-    box-shadow: 5px 5px gray;
-}
-#sbtbtn{
-    font-size: 20px;
-    background-color: green;
+.container{
+    border: solid;
+    background-color: rgb(194, 146, 192);
+    text-align: center;
     margin-top: 5%;
-    border: none;
-    border-radius: 10px;
+    font-size: 25px;
     padding: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+button{
+    background-color: green;
     color: white;
-    width: 10%;
+    border: none;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;  
+    border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.5s;
 }
-#sbtbtn:hover{
-    background-color: rgb(14, 70, 14);
+#btn4{
+    background-color: red;
+    color: white;
+    margin-bottom: 10px;
 }
-#textbox{
-    font-size: 15px;
+button:hover{
+    background-color: rgb(48, 182, 48);
+}
+#btn4:hover{
+    background-color: rgb(231, 92, 92);
 }
